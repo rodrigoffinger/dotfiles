@@ -1,0 +1,4 @@
+* text=auto
+
+scripts/wsl-debian/*.sh text eol=lf
+scripts/wsl-debian/README.md text eol=lf
