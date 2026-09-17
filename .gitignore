@@ -1,0 +1,37 @@
+# ---------------------------------------------------------------------------
+# Este repositorio e PUBLICO. O bloqueio abaixo e preventivo: sao arquivos que
+# costumam entrar num repo de dotfiles carregando credencial junto.
+# ---------------------------------------------------------------------------
+
+# NuGet.Config guarda <packageSourceCredentials> com PAT em texto claro
+NuGet.Config
+nuget.config
+
+# Segredos e credenciais
+.env
+.env.*
+*.pat
+*.token
+*credentials*
+*secrets*
+*.pfx
+*.p12
+*.key
+id_rsa*
+id_ed25519*
+.npmrc
+.netrc
+
+# Configuracao de nuvem com credencial
+.aws/credentials
+.azure/
+gh_token*
+
+# Backups gerados pelos scripts de instalacao
+*.bak
+*.bak-*
+
+# Lixo de sistema
+Thumbs.db
+desktop.ini
+.DS_Store

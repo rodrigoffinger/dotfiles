@@ -1,60 +1,57 @@
 {
-  // Define o tema do VSCode
+  // Tema e icones. Dependem das extensoes:
+  //   dracula-theme.theme-dracula
+  //   PKief.material-icon-theme
   "workbench.colorTheme": "Dracula",
-  // Configura tamanho e família da fonte
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Fonte. Fira Code precisa ser instalada a parte; as seguintes sao fallback.
+  "editor.fontFamily": "'Fira Code', 'CaskaydiaCove NF', Consolas, monospace",
+  "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.lineHeight": 24,
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true,
+  "terminal.integrated.fontSize": 14,
+
+  // terminal.integrated.shell.windows foi removida pelo VS Code.
+  // O equivalente atual e escolher o perfil padrao.
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+
   "editor.formatOnSave": true,
-  // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
+  // Linhas verticais para lembrar de quebrar linha em codigos muito grandes
   "editor.rulers": [80, 120],
   "editor.tabSize": 2,
-  // Aplica um sinal visual na esquerda da linha selecionada
+  // Sinal visual na esquerda da linha selecionada
   "editor.renderLineHighlight": "gutter",
-  // Aumenta a fonte do terminal
-  "terminal.integrated.fontSize": 14,
-  // Define o tema dos ícones na sidebar
-  "workbench.iconTheme": "material-icon-theme",
-  //"flow.useNPMPackagedFlow": true,
+  "editor.parameterHints.enabled": true,
+  "breadcrumbs.enabled": true,
+
   "javascript.validate.enable": false,
-  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    }
-  ],
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "breadcrumbs.enabled": true,
-  "editor.parameterHints.enabled": true,
-  "eslint-prettier.eslintIntegration": false,
+
+  // eslint.autoFixOnSave foi removida. O autofix hoje vive em
+  // editor.codeActionsOnSave, e o valor booleano virou "explicit"/"always"/"never".
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
-  "prettier.singleQuote": true,
-  "typescript.preferences.quoteStyle": "single",
-  "javascript.preferences.quoteStyle": "single",
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  // eslint.validate hoje e uma lista de linguagens; o formato
+  // { "language": ..., "autoFix": true } foi descontinuado.
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
 
   "material-icon-theme.folders.associations": {
     "infra": "app",
@@ -74,17 +71,16 @@
     "ormconfig.json": "database",
     "tsconfig.json": "tune"
   },
-  "vsicons.dontShowNewVersionMessage": true,
+
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+    // editor.wordBasedSuggestions virou enum string; false nao e mais valido.
+    "editor.wordBasedSuggestions": "off"
   }
 }

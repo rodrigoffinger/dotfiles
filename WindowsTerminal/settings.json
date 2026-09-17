@@ -41,17 +41,18 @@
     }
   ],
   "profiles": {
-    "defaults": {},
+    "defaults": {
+      "font": {
+        "face": "CaskaydiaCove NF",
+        "size": 10
+      }
+    },
     "list": [
       {
         "closeOnExit": "graceful",
         "colorScheme": "Dracula",
         "cursorColor": "#FFFFFF",
         "cursorShape": "bar",
-        "font": {
-          "face": "CaskaydiaCove Nerd Font",
-          "size": 10
-        },
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "hidden": false,
         "name": "PowerShell",
@@ -64,10 +65,6 @@
         "colorScheme": "Dracula",
         "cursorColor": "#FFFFFF",
         "cursorShape": "bar",
-        "font": {
-          "face": "CaskaydiaCove Nerd Font",
-          "size": 10
-        },
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "historySize": 9001,
         "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
@@ -83,10 +80,6 @@
         "colorScheme": "Campbell",
         "cursorColor": "#FFFFFF",
         "cursorShape": "bar",
-        "font": {
-          "face": "CaskaydiaCove Nerd Font",
-          "size": 10
-        },
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "historySize": 9001,
         "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
@@ -113,93 +106,32 @@
         "startingDirectory": "%USERPROFILE%"
       },
       {
+        "colorScheme": "Debian",
+        "commandline": "wsl.exe -d Debian",
+        "cursorShape": "bar",
+        "font": {
+          "face": "CaskaydiaCove NF",
+          "size": 11,
+          "lineHeight": 1.1
+        },
+        "guid": "{7de02e3e-1a31-5db9-bb31-db9795523b27}",
+        "hidden": false,
+        "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+        "name": "Debian",
+        "startingDirectory": "~",
+        "suppressApplicationTitle": true
+      },
+      {
         "commandline": "wsl -d kali-linux kex --wtstart -s",
         "guid": "{55ca431a-3a87-5fb3-83cd-11ececc031d2}",
         "hidden": false,
-        "name": "Win-KeX",
-        "startingDirectory": "//wsl$/kali-linux/home/rodrigo"
-      },
-      {
-        "guid": "{11863caa-bc5f-5494-81d8-9c27de903bb4}",
-        "hidden": false,
-        "name": "Developer Command Prompt for VS 22",
-        "source": "Windows.Terminal.VisualStudio"
-      },
-      {
-        "guid": "{5d898207-139e-53b5-bfa5-cae9537d2a19}",
-        "hidden": false,
-        "name": "Developer PowerShell for VS 22",
-        "source": "Windows.Terminal.VisualStudio"
-      },
-      {
-        "guid": "{dc9be2fa-ddd7-5bd5-b83b-5bab26fa282a}",
-        "hidden": true,
-        "name": "Developer Command Prompt for VS 18",
-        "source": "Windows.Terminal.VisualStudio"
-      },
-      {
-        "guid": "{ff358d95-98c7-55b8-8261-2ba10b91c9ab}",
-        "hidden": true,
-        "name": "Developer PowerShell for VS 18",
-        "source": "Windows.Terminal.VisualStudio"
-      },
-      {
-        "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
-        "hidden": true,
-        "name": "Ubuntu-24.04",
-        "source": "Windows.Terminal.Wsl"
-      },
-      {
-        "guid": "{fd177828-4624-5ff5-8401-3be2f812624d}",
-        "hidden": false,
-        "name": "Ubuntu-24.04",
-        "source": "Microsoft.WSL"
-      },
-      {
-        "guid": "{1a6484f3-8dee-51da-bb57-efab48e9c722}",
-        "hidden": true,
-        "name": "Developer Command Prompt for VS 2022",
-        "source": "Windows.Terminal.VisualStudio"
-      },
-      {
-        "guid": "{64bec99c-ad17-5505-84f4-902869fef7f8}",
-        "hidden": true,
-        "name": "Developer PowerShell for VS 2022",
-        "source": "Windows.Terminal.VisualStudio"
+        "name": "Win-KeX"
       },
       {
         "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
         "hidden": true,
         "name": "Visual Studio Debug Console",
         "source": "VSDebugConsole"
-      },
-      {
-        "guid": "{ae79d7e1-351d-5383-bdb8-3c0d6819c58d}",
-        "hidden": true,
-        "name": "Developer Command Prompt for VS 18 (2)",
-        "source": "Windows.Terminal.VisualStudio"
-      },
-      {
-        "guid": "{f6876f16-058a-5733-98c1-44ac9f9659eb}",
-        "hidden": true,
-        "name": "Developer PowerShell for VS 18 (2)",
-        "source": "Windows.Terminal.VisualStudio"
-      },
-      {
-        "guid": "{7de02e3e-1a31-5db9-bb31-db9795523b27}",
-        "hidden": false,
-        "name": "Debian",
-        "colorScheme": "Debian",
-        "cursorShape": "bar",
-        "font": {
-          "face": "CaskaydiaCove Nerd Font",
-          "size": 11,
-          "lineHeight": 1.1
-        },
-        "icon": "C:\\Users\\rodri\\AppData\\Local\\wsl\\{ccf910ec-4594-46d1-89b8-59a2c7bbc541}\\shortcut.ico",
-        "startingDirectory": "~",
-        "suppressApplicationTitle": true,
-        "commandline": "wsl.exe -d Debian"
       }
     ]
   },
@@ -251,26 +183,27 @@
       "yellow": "#F1FA8C"
     },
     {
-      "name": "Debian",
       "background": "#1E1E2E",
-      "foreground": "#E6EDF3",
       "black": "#090618",
-      "red": "#C34043",
-      "green": "#76946A",
-      "yellow": "#C0A36E",
       "blue": "#4FA3FF",
-      "purple": "#957FB8",
-      "cyan": "#6A9589",
-      "white": "#C8C093",
       "brightBlack": "#727169",
-      "brightRed": "#E82424",
-      "brightGreen": "#98BB6C",
-      "brightYellow": "#E6C384",
       "brightBlue": "#6CB6FF",
-      "brightPurple": "#938AA9",
       "brightCyan": "#7AA89F",
+      "brightGreen": "#98BB6C",
+      "brightPurple": "#938AA9",
+      "brightRed": "#E82424",
       "brightWhite": "#DCD7BA",
-      "selectionBackground": "#2D4F67"
+      "brightYellow": "#E6C384",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#6A9589",
+      "foreground": "#E6EDF3",
+      "green": "#76946A",
+      "name": "Debian",
+      "purple": "#957FB8",
+      "red": "#C34043",
+      "selectionBackground": "#2D4F67",
+      "white": "#C8C093",
+      "yellow": "#C0A36E"
     }
   ],
   "themes": []

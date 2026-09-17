@@ -1,0 +1,8 @@
+# Copiar para %USERPROFILE%\.wslconfig
+# Aplicar com: wsl --shutdown
+
+[wsl2]
+# ATENCAO: 1GB e apertado para o ambiente montado por scripts/wsl-debian
+# (SDKs do .NET, Neovim/LSP, Docker). Se o WSL ficar lento ou o Roslyn morrer,
+# suba para 8GB ou mais -- o WSL2 so reserva o que realmente usa.
+memory=1GB
