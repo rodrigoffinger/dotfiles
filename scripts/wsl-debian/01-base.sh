@@ -56,7 +56,22 @@ info "Instalando eza se estiver disponivel no repositorio Debian."
 if apt_has_candidate eza; then
   apt_install eza
 else
-  warn "Pacote eza nao encontrado no apt. Pulando por enquanto."
+  warn "Pacote eza nao encontrado no apt. Instalando pelo GitHub Releases oficial."
+  case "$(uname -m)" in
+    x86_64) eza_pattern='x86_64-unknown-linux-gnu\.zip$' ;;
+    aarch64 | arm64) eza_pattern='aarch64-unknown-linux-gnu\.zip$' ;;
+    *) die "Arquitetura nao suportada para eza: $(uname -m)" ;;
+  esac
+
+  eza_url="$(github_latest_asset_url eza-community/eza "$eza_pattern")"
+  [[ -n "$eza_url" ]] || die "Nao encontrei asset Linux GNU para eza."
+  tmp_eza_dir="$(mktemp -d)"
+  curl -fL "$eza_url" -o "$tmp_eza_dir/eza.zip"
+  unzip -q "$tmp_eza_dir/eza.zip" -d "$tmp_eza_dir"
+  eza_bin="$(find "$tmp_eza_dir" -type f -name eza | head -n 1)"
+  [[ -n "$eza_bin" ]] || die "Asset do eza nao contem binario eza."
+  install -m 0755 "$eza_bin" "$HOME/.local/bin/eza"
+  rm -rf "$tmp_eza_dir"
 fi
 
 info "Instalando lazygit se estiver disponivel no repositorio Debian."

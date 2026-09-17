@@ -25,15 +25,6 @@ apt_install_if_available() {
   fi
 }
 
-github_latest_asset_url() {
-  local repo="$1"
-  local pattern="$2"
-
-  curl -fsSL "https://api.github.com/repos/$repo/releases/latest" |
-    jq -r --arg pattern "$pattern" '.assets[] | select(.name | test($pattern)) | .browser_download_url' |
-    head -n 1
-}
-
 install_k9s() {
   has_command k9s && {
     info "k9s ja instalado: $(k9s version --short 2>/dev/null | head -n 1 || true)"

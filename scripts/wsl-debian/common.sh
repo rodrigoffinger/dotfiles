@@ -54,6 +54,15 @@ apt_has_candidate() {
   apt-cache policy "$1" 2>/dev/null | grep -q 'Candidate: [^(]'
 }
 
+github_latest_asset_url() {
+  local repo="$1"
+  local pattern="$2"
+
+  curl -fsSL "https://api.github.com/repos/$repo/releases/latest" |
+    jq -r --arg pattern "$pattern" '.assets[] | select(.name | test($pattern)) | .browser_download_url' |
+    head -n 1
+}
+
 ensure_dir() {
   mkdir -p "$1"
 }
